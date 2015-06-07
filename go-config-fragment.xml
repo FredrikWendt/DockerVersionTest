@@ -1,0 +1,16 @@
+    <pipeline name="DockerVersionTest">
+      <materials>
+        <git url="https://github.com/FredrikWendt/DockerVersionTest.git" />
+      </materials>
+      <stage name="VerifyWorkingVersion">
+        <jobs>
+          <job name="BuildAnAlmostEmptyContainer">
+            <tasks>
+              <exec command="./build.sh">
+                <runif status="passed" />
+              </exec>
+            </tasks>
+          </job>
+        </jobs>
+      </stage>
+    </pipeline>
